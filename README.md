@@ -3,6 +3,20 @@
 A cute personal AI assistant for Android, built with Kotlin and Jetpack Compose.
 It runs on your phone with **your own OpenAI API key**: no server needed.
 
+<p align="center">
+  <img src="docs/start.jpg" width="180" alt="Start page">
+  <img src="docs/chat.jpg" width="180" alt="Chatting">
+  <img src="docs/voice.jpg" width="180" alt="Hands-free voice mode">
+  <img src="docs/usage.jpg" width="180" alt="Usage counter in Settings">
+</p>
+
+<p align="center">
+  <img src="docs/demo.gif" width="260" alt="Demo: chatting, changing backgrounds and talking by voice">
+  <br><em>Chatting, switching backgrounds, and hands-free voice mode</em>
+</p>
+
+**[📱 Download the app](../../releases/latest)**: see the install steps and warning below first.
+
 ## What it can do
 
 - **Chat** by typing or talking, with replies read aloud (pick the voice, pitch and speed)
