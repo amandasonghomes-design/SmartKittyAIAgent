@@ -138,6 +138,14 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    /** True once this chat has used the MLS, so follow-up questions keep the MLS tools. */
+    private var mlsInChat = false
+
+    private fun mentionsRealEstate(text: String): Boolean {
+        val t = text.lowercase()
+        return MLS_WORDS.any { t.contains(it) }
+    }
+
     fun disconnectMls() {
         mls.disconnect()
         mlsConnected = false
@@ -165,6 +173,7 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
     /** Reopens a saved conversation; you can keep chatting where you left off. */
     fun openChat(info: ChatStore.ChatInfo) {
         if (!canSend) return
+        mlsInChat = false
         saveRecentActivity()
         tts.stop()
         viewModelScope.launch {
@@ -458,6 +467,7 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
 
     fun newChat() {
         if (!canSend) return
+        mlsInChat = false
         saveRecentActivity()
         tts.stop()
         items.clear()
@@ -557,16 +567,19 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
             var previousId = lastResponseId
             var tokensIn = 0
             var tokensOut = 0
-            val mlsToken = if (mlsConnected) mls.accessToken() else null
+            // Load the MLS tools only when the chat is about real estate: they add ~14,000 tokens per message.
+            val wantMls = mlsConnected && (mlsInChat || mentionsRealEstate(userText))
+            if (wantMls) mlsInChat = true
+            val mlsToken = if (wantMls) mls.accessToken() else null
             repeat(MAX_STEPS) {
                 val reply = try {
-                    openAi.respond(prefs.apiKey, prefs.model, instructions(), input, tools(mlsToken), previousId)
+                    openAi.respond(prefs.apiKey, prefs.model, instructions(mlsToken != null), input, tools(mlsToken), previousId)
                 } catch (e: java.io.IOException) {
                     // An old chat's server-side context can expire; carry on as a fresh thread.
                     if (previousId != null && e.message?.contains("previous", ignoreCase = true) == true) {
                         previousId = null
                         lastResponseId = null
-                        openAi.respond(prefs.apiKey, prefs.model, instructions(), input, tools(mlsToken), null)
+                        openAi.respond(prefs.apiKey, prefs.model, instructions(mlsToken != null), input, tools(mlsToken), null)
                     } else throw e
                 }
                 previousId = reply.id
@@ -789,7 +802,7 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
             .joinToString("\n").trim()
     }
 
-    private fun instructions(): String {
+    private fun instructions(mlsLoaded: Boolean = false): String {
         val memories = prefs.memories
         val memoryText = if (memories.isEmpty()) "(nothing yet)" else memories.joinToString("\n") { "- $it" }
         val recent = prefs.recentActivity.takeLast(10).mapNotNull {
@@ -799,7 +812,10 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
         val recentText = if (recent.isEmpty()) "(nothing yet)" else recent.joinToString("\n")
         val now = java.time.ZonedDateTime.now()
         val clock = now.format(java.time.format.DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy h:mm a z"))
-        val mlsText = if (mlsConnected) listOf(
+        val mlsText = if (mlsConnected && !mlsLoaded)
+            "- The MLS is connected, but its tools only load when the user talks about real estate. If you need " +
+                "MLS data and have no flexmls tools, ask the user to say \"check my MLS\" with their question."
+        else if (mlsConnected) listOf(
             "- The user's Flexmls MLS is connected (the flexmls tools). Use it for their",
             "  listings, property searches, open houses, photos and market statistics.",
             "- For \"check my MLS\", summarize their own listings: address, price, status, days on market,",
@@ -947,5 +963,14 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
         }
 
         private const val MAX_STEPS = 10
+
+        /** Words that switch on the MLS tools for a chat (English and Chinese). */
+        private val MLS_WORDS = listOf(
+            "mls", "flexmls", "listing", "house", "home for sale", "homes", "property", "properties",
+            "real estate", "open house", "for sale", "sold", "pending", "under contract", "condo",
+            "townhouse", "townhome", "bedroom", "bathroom", "sqft", "square feet", "acre", "lot size",
+            "price reduc", "days on market", "inventory", "market stat", "absorption", "comps", "neighborhood",
+            "房", "楼盘", "挂牌", "看房", "开放日", "公寓", "卧室", "成交", "市场",
+        )
     }
 }

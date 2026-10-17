@@ -12,8 +12,8 @@ android {
         applicationId = "com.myagent.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 25
-        versionName = "3.6"
+        versionCode = 26
+        versionName = "3.7"
     }
 
     // Release signing key: provided by GitHub Actions secrets when the APK is built online.
