@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/kitty.png" width="110" alt="Smart Kitty"></p>
 
-# 猫猫小助手 · Safe Smart Kitty AI Agent
+# 猫猫小助手 · Smart Kitty AI Agent
 
 A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose. 🐾
 It runs on your phone with **your own OpenAI API key** (easy to get in 5 minutes, from just $5: [here's how](GET_OPENAI_KEY.md)). No server needed.
