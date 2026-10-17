@@ -7,7 +7,7 @@
 > [!IMPORTANT]
 > 📱 **Android only.** This app works on Android phones (Samsung, Google Pixel, Motorola, OnePlus, etc.,
 > Android 8 or newer). It does **not** work on iPhone or iPad (iOS).
-😺 It runs on your phone with **your own OpenAI API key**: no server needed.
+😺 It runs on your phone with **your own OpenAI API key** (easy to get in 5 minutes, from just $5: [here's how](GET_OPENAI_KEY.md)). No server needed.
 
 <p align="center">
   <img src="docs/start.jpg" width="180" alt="Start page">
