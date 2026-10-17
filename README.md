@@ -1,4 +1,6 @@
-# 猫猫小助手 · Safe Smart Kitty AI Agent
+<p align="center"><img src="docs/kitty.png" width="110" alt="Smart Kitty"></p>
+
+# 🐱 猫猫小助手 · Safe Smart Kitty AI Agent
 
 A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose.
 
@@ -26,7 +28,7 @@ It runs on your phone with **your own OpenAI API key**: no server needed.
 > and a chat message costs about a tenth of a cent. A ChatGPT Plus subscription doesn't include this,
 > so you need a separate API key. 👉 **[Get your key in 5 minutes](GET_OPENAI_KEY.md)** (English + 中文)
 
-## What it can do
+## What it can do 🐾
 
 - **Chat** by typing or talking, with replies read aloud (pick the voice, pitch and speed)
 - **Hands-free voice mode**: tap the wave button and just keep talking
