@@ -173,6 +173,9 @@ fun ChatScreen(vm: AgentViewModel) {
                 title = {},
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
                 actions = {
+                    IconButton(onClick = { vm.toggleMusic() }) {
+                        MusicIcon(on = vm.musicOn)
+                    }
                     IconButton(onClick = { vm.toggleSpeakReplies() }) {
                         SpeakerIcon(on = vm.speakReplies)
                     }

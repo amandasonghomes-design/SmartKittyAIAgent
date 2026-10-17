@@ -69,7 +69,15 @@ class MainActivity : ComponentActivity() {
         if (uri.scheme == "com.smartkitty.app" && uri.host == "oauth") intent.data = null
     }
 
+    override fun onStart() {
+        super.onStart()
+        vm.appVisible = true
+        vm.startMusic()
+    }
+
     override fun onStop() {
+        vm.appVisible = false
+        vm.pauseMusic()
         vm.saveRecentActivity() // jot down what this chat was about
         vm.stopVoiceMode() // never listen in the background
         super.onStop()

@@ -257,6 +257,7 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
             return
         }
         quietRounds = 0
+        pauseMusic() // the microphone needs quiet
         voiceState = VoiceState.LISTENING
         listen()
     }
@@ -272,6 +273,33 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
         pendingUtterances = 0
         voiceLevel = 0f
         voicePartial = ""
+        startMusic()
+    }
+
+    // ---- Background music (a music-box "Jingle Bells", in res/raw) ----
+    var musicOn by mutableStateOf(prefs.musicOn)
+        private set
+    /** True while the app is on screen; music never plays in the background. */
+    var appVisible = false
+    private var music: android.media.MediaPlayer? = null
+
+    fun startMusic() {
+        if (!musicOn || !appVisible || voiceState != VoiceState.OFF) return
+        val player = music ?: android.media.MediaPlayer.create(getApplication(), R.raw.christmas_music)?.apply {
+            isLooping = true
+            setVolume(0.35f, 0.35f) // soft, so it doesn't cover the kitty's voice
+        }.also { music = it } ?: return
+        if (!player.isPlaying) player.start()
+    }
+
+    fun pauseMusic() {
+        music?.let { if (it.isPlaying) it.pause() }
+    }
+
+    fun toggleMusic() {
+        musicOn = !musicOn
+        prefs.musicOn = musicOn
+        if (musicOn) startMusic() else pauseMusic()
     }
 
     /** Tapping the orb interrupts the kitty (talking or thinking) so you can speak again. */
@@ -449,6 +477,8 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     override fun onCleared() {
+        music?.release()
+        music = null
         stopVoiceMode()
         dbThread.close()
         tts.shutdown()
@@ -816,7 +846,7 @@ class AgentViewModel(app: Application) : AndroidViewModel(app) {
             "- The MLS is connected, but its tools only load when the user talks about real estate. If you need " +
                 "MLS data and have no flexmls tools, ask the user to say \"check my MLS\" with their question."
         else if (mlsConnected) listOf(
-            "- The user's Flexmls MLS is connected (the flexmls tools). Use it for their",
+            "- The user is a Realtor and their Flexmls MLS is connected (the flexmls tools). Use it for their",
             "  listings, property searches, open houses, photos and market statistics.",
             "- For \"check my MLS\", summarize their own listings: address, price, status, days on market,",
             "  plus upcoming open houses. Keep it short; offer details on request.",

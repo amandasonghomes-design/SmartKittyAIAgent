@@ -68,6 +68,17 @@ fun SpeakerIcon(on: Boolean) = BlueIcon(true) { c, w ->
     }
 }
 
+/** Music note: plays/pauses the background music. Crossed out when off. */
+@Composable
+fun MusicIcon(on: Boolean) = BlueIcon(true) { c, w ->
+    drawLine(c, Offset(9f, 17f), Offset(9f, 5f), w, StrokeCap.Round)
+    drawLine(c, Offset(19f, 15f), Offset(19f, 3.5f), w, StrokeCap.Round)
+    drawLine(c, Offset(9f, 5f), Offset(19f, 3.5f), w * 1.6f, StrokeCap.Round)
+    drawCircle(IconFill, 3f, Offset(6.5f, 17.5f)); drawCircle(c, 3f, Offset(6.5f, 17.5f), style = Stroke(w))
+    drawCircle(IconFill, 3f, Offset(16.5f, 15.5f)); drawCircle(c, 3f, Offset(16.5f, 15.5f), style = Stroke(w))
+    if (!on) drawLine(c, Offset(3f, 3f), Offset(21f, 21f), w, StrokeCap.Round)
+}
+
 @Composable
 fun MailIcon() = BlueIcon(true) { c, w ->
     drawRoundRect(c, Offset(3f, 5.5f), Size(18f, 13f), CornerRadius(2.5f), style = Stroke(w))

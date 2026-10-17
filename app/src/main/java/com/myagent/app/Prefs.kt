@@ -89,6 +89,11 @@ class Prefs(context: Context) {
         }
         set(v) = sp.edit().putString("memories", JSONArray(v).toString()).apply()
 
+    /** Play the background Christmas music when the app opens. */
+    var musicOn: Boolean
+        get() = sp.getBoolean("music_on", true)
+        set(v) = sp.edit().putBoolean("music_on", v).apply()
+
     // ---- Spoken voice ----
     /** Name of the phone voice for English replies ("" = phone default). */
     var voiceEn: String
@@ -188,7 +193,7 @@ class Prefs(context: Context) {
 
     companion object {
         // Change this in the app's Settings if your account uses a different model.
-        const val DEFAULT_MODEL = "gpt-6-luna"
+        const val DEFAULT_MODEL = "gpt-5.5"
         const val DEFAULT_NAME = "猫猫小助手"
         const val DEFAULT_ABOUT_ME = "" // the main profile lives in assets/about_me.md
     }
