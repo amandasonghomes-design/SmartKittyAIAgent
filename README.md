@@ -1,4 +1,4 @@
-# 猫猫小助手 · Smart Kitty AI Agent
+# 猫猫小助手 · Safe Smart Kitty AI Agent
 
 A cute personal AI assistant for Android, built with Kotlin and Jetpack Compose.
 It runs on your phone with **your own OpenAI API key**: no server needed.
