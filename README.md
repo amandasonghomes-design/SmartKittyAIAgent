@@ -17,6 +17,11 @@ It runs on your phone with **your own OpenAI API key**: no server needed.
 
 **[📱 Download the app](../../releases/latest)**: see the install steps and warning below first.
 
+> [!TIP]
+> **New to OpenAI? Start with just $5.** No monthly subscription: you pay only for what you use,
+> and a chat message costs about a tenth of a cent. A ChatGPT Plus subscription doesn't include this,
+> so you need a separate API key. 👉 **[Get your key in 5 minutes](GET_OPENAI_KEY.md)** (English + 中文)
+
 ## What it can do
 
 - **Chat** by typing or talking, with replies read aloud (pick the voice, pitch and speed)
@@ -39,6 +44,7 @@ It runs on your phone with **your own OpenAI API key**: no server needed.
    **SmartKitty-….apk** file to download it.
 2. Open the downloaded file and tap **Install**.
 3. Open the app, tap **Settings**, and paste your **OpenAI API key**.
+   Don't have one? Follow **[How to get your OpenAI API key](GET_OPENAI_KEY.md)**.
 
 > [!WARNING]
 > **You will see warnings while installing. This is normal for apps that aren't from the Google Play Store.**
@@ -58,7 +64,7 @@ Follow **[SETUP.md](SETUP.md)**: it takes about 30 minutes the first time.
 You need:
 
 - Android Studio and an Android phone (Android 8 or newer)
-- An OpenAI API key from https://platform.openai.com (pay-as-you-go)
+- An OpenAI API key (pay-as-you-go, from $5): **[how to get one](GET_OPENAI_KEY.md)**
 - For Gmail features: a free Google Cloud project (steps in SETUP.md)
 
 Then edit `app/src/main/assets/about_me.md` with facts about you (your city, languages…),
@@ -66,9 +72,13 @@ so the kitty knows you from the first chat.
 
 ## What it costs
 
-You pay OpenAI directly for what you use. The default model is `gpt-6-luna`, the
-cheapest one: a normal chat message costs a small fraction of a cent. You can change
-the model in Settings. Making pictures and web searches cost extra.
+You pay OpenAI directly, **pay as you go**: no monthly subscription, and you can start with **$5**.
+The default model is `gpt-6-luna`, the cheapest one: a normal chat message costs about **a tenth of a cent**,
+so $5 lasts for thousands of messages. Making pictures and web searches cost a bit extra.
+You can change the model in Settings and see your spending in **Settings → Usage**.
+
+Already pay for ChatGPT Plus? That's a separate product: the API is billed on its own.
+See **[How to get your OpenAI API key](GET_OPENAI_KEY.md)**.
 
 ## Privacy
 
