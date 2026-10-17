@@ -86,7 +86,9 @@ jobs:
             > - Only install APKs from this official page. Never install a copy someone sends you elsewhere.
 
             ## 🔑 What you need
-            - Your own **OpenAI API key** from https://platform.openai.com (paste it in the app's Settings).
+            - Your own **OpenAI API key** (paste it in the app's Settings). New to this? **Start with just $5**:
+              pay as you go, no subscription, about a tenth of a cent per chat message. A ChatGPT Plus
+              subscription doesn't include it. 👉 [How to get your key in 5 minutes](https://github.com/${{ github.repository }}/blob/main/GET_OPENAI_KEY.md)
             - Chat, voice, photos, pictures, web search and memory work right away.
             - **Gmail cleanup** needs your own free Google Cloud setup: see [SETUP.md](https://github.com/${{ github.repository }}/blob/main/SETUP.md).
 
