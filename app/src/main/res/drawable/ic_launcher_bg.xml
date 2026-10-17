@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Soft light-blue background behind the kitty app icon -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="#FFEAF6FF"
+        android:endColor="#FFD6ECFF" />
+</shape>

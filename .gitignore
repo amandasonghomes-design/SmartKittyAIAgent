@@ -1,0 +1,17 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+
+# Signing keys and secrets: never upload these
+*.jks
+*.keystore
+*.p12
+.env
+
+# Android Studio extras
+captures/
+.externalNativeBuild/
+.cxx/
+.DS_Store
