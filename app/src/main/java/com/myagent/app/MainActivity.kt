@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
         val uri = intent?.data ?: return
         // The "Back to 猫猫小助手" button on the sign-in page just brings the app forward;
         // the sign-in itself was already finished by the app's little listener.
-        if (uri.scheme == "com.myagent.app" && uri.host == "oauth") intent.data = null
+        if (uri.scheme == "com.smartkitty.app" && uri.host == "oauth") intent.data = null
     }
 
     override fun onStop() {

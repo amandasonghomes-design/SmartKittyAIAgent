@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.myagent.app"
+        applicationId = "com.smartkitty.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 26

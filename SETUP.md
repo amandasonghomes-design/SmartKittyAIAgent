@@ -46,7 +46,7 @@ the Gmail account you want to clean.
    `https://www.googleapis.com/auth/gmail.modify`, tick it and save.
 6. Under **Clients**, click **Create client**:
    - Application type: **Android**
-   - Package name: `com.myagent.app`
+   - Package name: `com.smartkitty.app`
    - SHA-1: paste the value from step a.
    - Create.
 

@@ -128,8 +128,8 @@ class MlsAuth(private val http: OkHttpClient, private val prefs: Prefs) {
                             color:#fff;text-decoration:none;font-size:18px;font-weight:bold}</style></head><body>
                             <h2>${if (ok) "MLS connected 🐱" else "MLS sign-in didn't finish"}</h2>
                             <p>You can go back to 猫猫小助手 now.</p>
-                            <a href="com.myagent.app://oauth/done">Back to 猫猫小助手</a>
-                            <script>setTimeout(function(){location.href="com.myagent.app://oauth/done"},400)</script>
+                            <a href="com.smartkitty.app://oauth/done">Back to Smart Kitty</a>
+                            <script>setTimeout(function(){location.href="com.smartkitty.app://oauth/done"},400)</script>
                             </body></html>""".trimIndent().toByteArray()
                         out.write(
                             ("HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n" +
