@@ -5,6 +5,11 @@
 A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose. 🐾
 It runs on your phone with **your own OpenAI API key** (easy to get in 5 minutes, from just $5: [here's how](GET_OPENAI_KEY.md)). No server needed.
 
+> [!CAUTION]
+> **Non-commercial hobby project, provided "as is" with no warranty. Use at your own risk.**
+> It's meant for developers and people comfortable with technology. Please read the
+> [Disclaimer](#%EF%B8%8F-disclaimer) before using it.
+
 > [!IMPORTANT]
 > 📱 **Android only.** This app works on Android phones (Samsung, Google Pixel, Motorola, OnePlus, etc.,
 > Android 8 or newer). It does **not** work on iPhone or iPad (iOS).
@@ -105,6 +110,30 @@ See **[How to get your OpenAI API key](GET_OPENAI_KEY.md)**.
 | `ChatStore.kt` | SQLite storage for chats and the past-chat search index |
 | `ChatScreen.kt`, `Mascot.kt`, `VoiceOrb.kt` | The screens and the kitty |
 | `Prefs.kt` | Settings, with encrypted secrets |
+
+## ⚠️ Disclaimer
+
+Please read this before using the app or the code.
+
+- **Non-commercial project.** This is a free, open-source hobby project shared for learning and personal use.
+  It is not a commercial product or service, and it comes with no support obligations.
+- **For developers and experienced users.** It is intended for people who are familiar with programming,
+  Android, API keys and cloud services, and who can review the code and understand what it does.
+- **Provided "as is", without warranty of any kind.** No guarantee is made that it is error-free, secure,
+  or fit for any purpose. See the [MIT License](LICENSE).
+- **You use it at your own risk.** The author and contributors are **not responsible or liable** for any loss
+  or damage arising from its use or misuse, including but not limited to: deleted or lost email or data,
+  unsubscribed services, charges on your OpenAI or other accounts, leaked or misused API keys, account
+  suspensions, security incidents, device problems, or decisions made based on its output.
+- **You are responsible for your accounts and keys.** You create, pay for and protect your own OpenAI,
+  Google and other accounts and keys, and you must follow their terms of service and usage policies,
+  as well as any rules that apply to data you access (for example, MLS rules for real estate data).
+- **AI can be wrong.** Answers may be inaccurate, incomplete or out of date. Always check important
+  information yourself. Nothing the app says is legal, financial, medical or real estate advice.
+- **Review before you approve.** The app asks for your approval before moving email to Trash or unsubscribing,
+  but you are responsible for checking what you approve.
+- **Not affiliated** with OpenAI, Google, FBS/Flexmls, Meta or any other company. Product names belong to
+  their owners and are used only to describe compatibility.
 
 ## License
 

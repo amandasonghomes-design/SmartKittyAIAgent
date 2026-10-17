@@ -93,6 +93,11 @@ jobs:
             >   **More details → Install anyway**. It warns because the app is new and not on the Play Store.
             > - Only install APKs from this official page. Never install a copy someone sends you elsewhere.
 
+            > [!CAUTION]
+            > Non-commercial hobby project for developers and experienced users, provided "as is" with no warranty.
+            > Use at your own risk; the author is not responsible for any loss or misuse.
+            > Please read the [full disclaimer](https://github.com/${{ github.repository }}#%EF%B8%8F-disclaimer).
+
             ## 🔑 What you need
             - Your own **OpenAI API key** (paste it in the app's Settings). New to this? **Start with just $5**:
               pay as you go, no subscription, about a tenth of a cent per chat message. A ChatGPT Plus
