@@ -1,6 +1,6 @@
 # 🔑 How to get your OpenAI API key (5 minutes, start with just $5)
 
-Smart Kitty needs an **OpenAI API key**: a private password that lets the app talk to
+Smart Kitty (an **Android phone app**) needs an **OpenAI API key**: a private password that lets the app talk to
 OpenAI's AI for you. Getting one is easy, even if you've never done anything "technical".
 
 ## 💡 First: a ChatGPT subscription is NOT the same as the API

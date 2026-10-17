@@ -78,6 +78,9 @@ jobs:
           body: |
             ## 📱 Install on your Android phone
 
+            > [!IMPORTANT]
+            > **Android phones only** (Android 8 or newer). This app does not work on iPhone or iPad.
+
             1. On your phone, tap **SmartKitty-${{ steps.version.outputs.name }}.apk** below to download it.
             2. Open the downloaded file and tap **Install**.
 

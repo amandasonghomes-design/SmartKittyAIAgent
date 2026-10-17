@@ -1,6 +1,10 @@
 # 猫猫小助手 · Safe Smart Kitty AI Agent
 
-A cute personal AI assistant for Android, built with Kotlin and Jetpack Compose.
+A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose.
+
+> [!IMPORTANT]
+> 📱 **Android only.** This app works on Android phones (Samsung, Google Pixel, Motorola, OnePlus, etc.,
+> Android 8 or newer). It does **not** work on iPhone or iPad (iOS).
 It runs on your phone with **your own OpenAI API key**: no server needed.
 
 <p align="center">
@@ -38,7 +42,7 @@ It runs on your phone with **your own OpenAI API key**: no server needed.
 - **Usage counter**: tokens in/out and an estimated cost, in Settings
 - 10 backgrounds and an animated kitty mascot
 
-## 📱 Install the app (no coding needed)
+## 📱 Install the app on your Android phone (no coding needed)
 
 1. On your Android phone, open the **[latest release](../../releases/latest)** and tap the
    **SmartKitty-….apk** file to download it.
