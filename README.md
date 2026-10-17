@@ -1,8 +1,8 @@
 <p align="center"><img src="docs/kitty.png" width="110" alt="Smart Kitty"></p>
 
-# 🐱 猫猫小助手 · Safe Smart Kitty AI Agent
+# 猫猫小助手 · Safe Smart Kitty AI Agent
 
-🐱 A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose. 🐾
+A cute personal AI assistant **for Android phones**, built with Kotlin and Jetpack Compose. 🐾
 
 > [!IMPORTANT]
 > 📱 **Android only.** This app works on Android phones (Samsung, Google Pixel, Motorola, OnePlus, etc.,
