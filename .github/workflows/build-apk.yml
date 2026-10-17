@@ -96,7 +96,7 @@ jobs:
             > [!CAUTION]
             > Non-commercial hobby project for developers and experienced users, provided "as is" with no warranty.
             > Use at your own risk; the author is not responsible for any loss or misuse.
-            > Please read the [full disclaimer](https://github.com/${{ github.repository }}#%EF%B8%8F-disclaimer).
+            > Please read the [full disclaimer](https://github.com/${{ github.repository }}#disclaimer).
 
             ## 🔑 What you need
             - Your own **OpenAI API key** (paste it in the app's Settings). New to this? **Start with just $5**:

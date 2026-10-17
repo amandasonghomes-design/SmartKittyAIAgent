@@ -8,7 +8,7 @@ It runs on your phone with **your own OpenAI API key** (easy to get in 5 minutes
 > [!CAUTION]
 > **Non-commercial hobby project, provided "as is" with no warranty. Use at your own risk.**
 > It's meant for developers and people comfortable with technology. Please read the
-> [Disclaimer](#%EF%B8%8F-disclaimer) before using it.
+> [Disclaimer](#disclaimer) before using it.
 
 > [!IMPORTANT]
 > 📱 **Android only.** This app works on Android phones (Samsung, Google Pixel, Motorola, OnePlus, etc.,
@@ -111,7 +111,7 @@ See **[How to get your OpenAI API key](GET_OPENAI_KEY.md)**.
 | `ChatScreen.kt`, `Mascot.kt`, `VoiceOrb.kt` | The screens and the kitty |
 | `Prefs.kt` | Settings, with encrypted secrets |
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 Please read this before using the app or the code.
 
