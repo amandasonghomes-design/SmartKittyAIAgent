@@ -16,9 +16,25 @@ android {
         versionName = "3.6"
     }
 
+    // Release signing key: provided by GitHub Actions secrets when the APK is built online.
+    // Without a key (e.g. on your own computer), release builds use the normal debug key.
+    val releaseKeystore = System.getenv("KEYSTORE_FILE")
+    signingConfigs {
+        if (releaseKeystore != null) {
+            create("release") {
+                storeFile = file(releaseKeystore)
+                storePassword = System.getenv("KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS")
+                keyPassword = System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = if (releaseKeystore != null) signingConfigs.getByName("release")
+            else signingConfigs.getByName("debug")
         }
     }
     compileOptions {

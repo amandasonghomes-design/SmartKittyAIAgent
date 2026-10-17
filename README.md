@@ -19,7 +19,26 @@ It runs on your phone with **your own OpenAI API key**: no server needed.
 - **Usage counter**: tokens in/out and an estimated cost, in Settings
 - 10 backgrounds and an animated kitty mascot
 
-## Getting started
+## 📱 Install the app (no coding needed)
+
+1. On your Android phone, open the **[latest release](../../releases/latest)** and tap the
+   **SmartKitty-….apk** file to download it.
+2. Open the downloaded file and tap **Install**.
+3. Open the app, tap **Settings**, and paste your **OpenAI API key**.
+
+> [!WARNING]
+> **You will see warnings while installing. This is normal for apps that aren't from the Google Play Store.**
+> - **"Install unknown apps"**: Android asks if your browser or Files app may install apps. Tap **Settings**,
+>   turn on **Allow from this source**, then go back and tap **Install**.
+> - **Google Play Protect** may say the app is **unrecognized** or **unsafe**. Tap **More details → Install anyway**.
+>   It warns because the app is new and not on the Play Store, not because something bad was found.
+> - Only download the APK from this repository's **Releases** page. Never install a copy someone sends you elsewhere.
+> - You can turn **"Allow from this source"** back off after installing.
+
+The ready-made app includes chat, voice, photos, pictures, web search and memory.
+**Gmail cleanup** needs your own free Google Cloud setup (see SETUP.md, step 3).
+
+## Build it yourself
 
 Follow **[SETUP.md](SETUP.md)**: it takes about 30 minutes the first time.
 You need:
